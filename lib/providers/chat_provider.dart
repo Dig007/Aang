@@ -137,10 +137,10 @@ class ChatProvider extends ChangeNotifier {
     } else {
       _model = _visionModel ??
           GenerativeModel(
-              model: setCurrentModel(newModel: 'gemini-1.5-flash'),
+              model: setCurrentModel(newModel: 'gemini-2.0-flash'),
               apiKey: getApiKey(),
               generationConfig: GenerationConfig(
-                temperature: 0.4,
+                temperature: 0.9,
                 topK: 32,
                 topP: 1,
                 maxOutputTokens: 4096,
