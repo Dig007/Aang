@@ -27,6 +27,14 @@ jobs:
 
     - name: Run flutter pub upgrade
       run: flutter pub upgrade
+      
+    - name: Update Gradle and AGP versions
+      run: |
+        # Update Gradle version
+        sed -i 's/distributionUrl=.*$/distributionUrl=https\\:\/\/services.gradle.org\/distributions\/gradle-8.0-all.zip/' android/gradle/wrapper/gradle-wrapper.properties
+        
+        # Verify the change
+        cat android/gradle/wrapper/gradle-wrapper.properties
 
     - name: Build APK
       run: flutter build apk --release
